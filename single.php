@@ -1,29 +1,27 @@
-<?php 
+<?php
 get_header(); 
-if ( have_posts() ): the_post();
+if ( have_posts() ) : the_post(); 
 ?>
-<div class="wrapper clearfix" id="body-wrapper">
-       
-  <div class="container clearfix">
-  
-    <section class="s2">
-          
-      <article class="post" id="post-<?php the_id(); ?>">
-      
-        <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-        
-        <span class="meta">by <?php the_author(); ?> on <?php the_time('j F, Y \a\t H:i') ?></span>
-        
-        <?php the_content(); ?>
-        
-      </article>
-      
-    </section>
+<div class="wrapper content" id="body-wrapper">
     
-  </div>
-  
+    <div id="single-post-content" class="container clearfix">
+            
+        <?php if(has_post_thumbnail()) the_post_thumbnail("post-thumbnail-large", array('title' => '')); ?>
+                    
+        <article class="post-content">
+            
+            <h1><?php the_title(); ?></h1>
+            <span class="meta"><?php echo js_date(); ?></span>
+            
+            <?php the_content(); ?>
+            
+        </article>
+        
+        <p><a href="/posts/">&larr; Back to Posts</a></p>
+    
+    </div>
+    
 </div>
-	
 <?php
 endif;
 get_footer();

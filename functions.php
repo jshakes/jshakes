@@ -1,13 +1,46 @@
 <?php
 
-require_once("include/post-types.php");
-require_once("include/mytwit.inc.php");
-
 /* ---- Post Thumbnails ---- */
 
-add_theme_support('post-thumbnails', array('post','case_studies'));
+add_theme_support('post-thumbnails');
 set_post_thumbnail_size( 160, 160, true );
-add_image_size("case-study", 450, 270, true);
+add_image_size("post-thumbnail-large", 220, 220, true);
+add_image_size("work-thumbnail", 340, 340, true);
+add_image_size("work-full", 340, 340, true);
+add_image_size("tiny", 50, 50, true);
+
+
+function register_post_types(){
+
+  register_post_type( 'work',
+  	array(
+      'labels' => array(
+        'name' => __( 'Work' ),
+        'singular_name' => __( 'Work' )
+    	),
+    	'public' => true,
+    	'has_archive' => true,
+    	'supports' => array('title', 'editor', 'thumbnail'),
+    	'rewrite' => false
+  	)
+  );
+  
+  register_post_type( 'quote',
+  	array(
+      'labels' => array(
+        'name' => __( 'Quotes' ),
+        'singular_name' => __( 'Quote' )
+    	),
+    	'public' => true,
+    	'has_archive' => false,
+    	'supports' => array('title', 'editor')
+  	)
+  );
+
+}
+
+
+add_action( 'init', 'register_post_types', 0 );
 
 
 /* ---- Sidebar ---- */
@@ -68,15 +101,13 @@ function custom_login_logo() {
     </style>';
 }
 
-function get_tweets($tweets = 3){
+function js_date(){
     
-    //Instantiate a new 'mytwit' object so we can pull in our tweets
-    $twitter = new myTwit();
-    $twitter->user = 'trafficdigital';
-    $twitter->postLimit = $tweets;
-    $twitter->myTwitHeader = false;
-    $twitter->initMyTwit();
-    return $twitter->myTwitData;
+    global $post;
+    $datestr = get_the_time('j F');
+    if(get_the_date('Y') != date('Y')) $datestr .= ", ".get_the_date('Y');
+    return $datestr;
+    
 }
 
 function cpt_page_css_class( $css_class, $page ) {
@@ -84,8 +115,8 @@ function cpt_page_css_class( $css_class, $page ) {
     global $post;
     
     if (
-        (is_single() && $page->ID == get_page_by_title("Posts")->ID) ||
-        (get_post_type($post) == "work" && $page->ID == get_page_by_title("Portfolio")->ID)
+        (get_post_type($post) == "post" && $page->ID == get_page_by_title("Posts")->ID) ||
+        (get_post_type($post) == "work" && $page->ID == get_page_by_title("Work")->ID)
     ) {
         $css_class[] = 'current_page_item';
     }
@@ -93,11 +124,22 @@ function cpt_page_css_class( $css_class, $page ) {
 }
 add_filter( 'page_css_class', 'cpt_page_css_class', 10, 2 );
 
+//remove <p> tags from around images
+
+function filter_ptags_on_images($content)
+{
+    $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+    // now pass that through and do the same for iframes...
+    return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+}
+
+// we want it to be run after the autop stuff... 10 is default.
+add_filter('the_content', 'filter_ptags_on_images');
+
 /* Actions */
 
 add_action('login_head', 'custom_login_logo');
 add_action('init', 'enqueue_scripts');
-add_action('init', 'register_post_types', 0 );
 add_action('init', 'register_custom_menu');
 
 

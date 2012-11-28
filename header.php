@@ -41,9 +41,10 @@
             <ul>
             <?php
             $nav_args = array(
-            'sort_column' => 'menu_order, post_title',
-            'title_li' => false,
-            'depth' => 1
+                'sort_column' => 'menu_order, post_title',
+                'title_li' => false,
+                'depth' => 1,
+                'exclude' => get_option('page_on_front')
             );
             wp_list_pages($nav_args);
             ?>

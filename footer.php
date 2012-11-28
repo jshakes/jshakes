@@ -1,15 +1,26 @@
 <div class="wrapper clearfix" id="footer-wrapper">
     <footer class="content">
-      <section class="s3">
-        
-      </section>
-      <section class="s3">
-        
-      </section>
-      <section class="s3">
-      
-        
-      </section>
+        <div class="wrapper clearfix">
+            <section class="s2">
+                <p><a href="https://profiles.google.com/102535426839727420493" target="_blank" rel="author">James Shakespeare</a>, <?php echo date('Y'); ?></p>
+                <p>Made with &hearts; in London</p>    
+            </section>
+            <section class="s2">
+                <?php
+                //Output a random quote here
+                $args = array(
+                    'post_type' => 'quote',
+                    'orderby' => 'rand',
+                    'posts_per_page' => 1
+                );
+                $quote = new WP_Query($args);
+                $quote->the_post();
+                ?>
+                <p class="quote-body">&ldquo;<?php echo get_the_content(); ?>&rdquo;</p>
+                <span class="quote-source">&mdash;<?php the_title(); ?></span>
+                <?php wp_reset_postdata(); ?>
+            </section>
+        </div>
     </footer>
 </div>
 	

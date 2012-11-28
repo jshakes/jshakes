@@ -5,15 +5,39 @@ Site: Traffic Digital
 
 $(function(){
    
-   $("a#showreel-play").click(function(e){
-       e.preventDefault();
-       showreelPlay();  
-   });
+   //center the images on the single blog post
+   
+     
+    $("div.work a").hover(function(){
+       
+       $(this).children(".overlay").fadeIn(100);
+    },
+    function(){
     
+       $(this).children(".overlay").fadeOut(200);
+    });
+    slidesInit();
+    backgroundScrollInit();
 });
 
-showreelPlay = function(){
+
+slidesInit = function(){
     
-    $(".wrapper.intro .video-container").fadeIn().children("iframe").attr("src", "http://player.vimeo.com/video/32444506?title=0&amp;byline=0&amp;portrait=0&amp;color=e00500");
-    $(".wrapper.intro").animate({height: 530});
+    var args = {
+        'pagination': false,
+        'bigTarget': true
+    }
+    $(".slides").slides(args);
+}
+
+
+backgroundScrollInit = function(){
+    /*
+    The background will scroll up at 25% of the amount the window is scrolled down (y / 4)
+    */
+    $(window).scroll(function() {
+        var y = $(this).scrollTop();
+        $("#header-wrapper").css('background-position', '50% ' + parseInt(-y * 0.5) + 'px');
+    });
+    
 }
