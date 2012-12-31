@@ -100,6 +100,7 @@ body{
     font-size: 14px;
     color: #333;
     background: #475052;
+    -webkit-font-smoothing: antialiased;
 }
 
 p{  line-height: 1.6em; margin: 0 0 10px 0;  }
@@ -159,7 +160,7 @@ section:first-child{ margin-left: 0;  }
 
 /* header */
 
-.wrapper#header-wrapper{   position: relative; background: url('img/backgrounds/golden-gate.jpg') no-repeat 50% 0;  background-attachment: fixed; z-index: 1; }
+.wrapper#header-wrapper{   position: relative; background: url('img/backgrounds/alps.jpg') no-repeat 50% 0;  background-attachment: fixed; z-index: 1;  }
 .wrapper#header-wrapper .container{   text-align: center; font-style: italic; font-size: 2em; color: #fff; line-height: 1.2em; font-weight: 100; text-shadow: 0 0 10px #333;  }
 .wrapper#header-wrapper .container p{    font-family: Georgia, Times, serif;    }
 .wrapper#header-wrapper .container a.btn{   margin: 10px 0; font-style: normal; text-shadow: none; font-size: .8em;  }
