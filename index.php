@@ -4,7 +4,9 @@ The posts loop. Fetches 'loop-posts.php' to output the posts themselves.
 */
 
 get_header(); 
-
+?>
+</div><!-- /#header-wrapper -->
+<?php
 if ( have_posts() ): 
 ?>
 <div class="wrapper clearfix" id="body-wrapper">
@@ -13,7 +15,7 @@ if ( have_posts() ):
   
     <section class="s1" id="post-loop">
     
-      <?php get_template_part('loop', 'posts'); ?>
+      <?php get_template_part('loop', 'blog'); ?>
       
     </section>
     

@@ -1,17 +1,17 @@
-<?php get_header(); ?>
-
-<div class="wrapper clearfix" id="404">
-       
-  <div class="container clearfix">
-  
-    <section class="s1">
-          
-      <h2>404 - Page Not Found</h2>
-      
-    </section>
+<?php
+get_header(); 
+?>
+<div class="wrapper content" id="body-wrapper">
     
-  </div>
-  
+    <div class="container clearfix">
+    
+        <h1>404, Page not found</h1>
+
+        <p>Sorry about that.</p>
+    
+    </div>
+    
 </div>
-	
-<?php get_footer(); ?>
+<?php
+get_footer();
+?>

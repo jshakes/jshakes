@@ -20,7 +20,7 @@ function register_post_types(){
     	),
     	'public' => true,
     	'has_archive' => true,
-    	'supports' => array('title', 'editor', 'thumbnail'),
+    	'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
     	'rewrite' => false
   	)
   );
@@ -70,8 +70,20 @@ function register_custom_menu() {
 
 //replacement text for 'read more' after excerpts
 function new_excerpt_more($more) {
-  global $post;
-	return ' <a class="moretag" href="'. get_permalink($post->ID) . '">Read more</a>';
+    global $post;
+    return ' <a class="moretag" href="'. get_permalink($post->ID) . '">Read more</a>';
+}
+
+//add button class to next/prev post links
+add_filter('next_posts_link_attributes', 'next_class');
+add_filter('previous_posts_link_attributes', 'prev_class');
+
+function next_class() {
+    return 'class="button back left"';
+}
+
+function prev_class() {
+    return 'class="button forward right"';
 }
 
 /* Scripts */
@@ -91,6 +103,16 @@ function enqueue_scripts(){
         null,
         null,
         true
+    );
+}
+
+// Styles
+
+
+function enqueue_styles(){
+    wp_enqueue_style(
+        "royal-slider",
+        get_template_directory_uri()."/css/royalslider.css"
     );
 }
 
@@ -115,7 +137,7 @@ function cpt_page_css_class( $css_class, $page ) {
     global $post;
     
     if (
-        (get_post_type($post) == "post" && $page->ID == get_page_by_title("Posts")->ID) ||
+        (get_post_type($post) == "post" && $page->ID == get_page_by_title("Blog")->ID) ||
         (get_post_type($post) == "work" && $page->ID == get_page_by_title("Work")->ID)
     ) {
         $css_class[] = 'current_page_item';
@@ -140,6 +162,7 @@ add_filter('the_content', 'filter_ptags_on_images');
 
 add_action('login_head', 'custom_login_logo');
 add_action('init', 'enqueue_scripts');
+add_action('init', 'enqueue_styles');
 add_action('init', 'register_custom_menu');
 
 

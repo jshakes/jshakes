@@ -22,7 +22,7 @@ a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 abbr[title] { border-bottom: 1px dotted; }
 b, strong { font-weight: bold; }
-blockquote { margin: 1em 40px; }
+blockquote { margin: 0;  }
 dfn { font-style: italic; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 ins { background: #ff9; color: #000; text-decoration: none; }
@@ -90,9 +90,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 }
 
-h1, h2, h3, h4, h5, header nav ul li a{   font-family: aller_lightregular, Arial, sans-serif;    }
-
-
 /* -------------------- ELEMENT DEFAULTS -------------------- */
 
 body{
@@ -104,11 +101,13 @@ body{
 }
 
 p{  line-height: 1.6em; margin: 0 0 10px 0;  }
-a, a:visited{   color: #000; text-decoration: none;  }
+a, a:visited{   color: #333; text-decoration: none;  }
 a:hover{    text-decoration: underline;    }
 
 p a, span a{    background: url('img/link-bg.png');  }
-p a:hover, span a:hover{    text-decoration: none; border-bottom: 1px dashed #999;    }
+p a:hover, span a:hover{    text-decoration: none; background: url('img/link-bg-hover.png');  }
+
+blockquote {  font-size: 1.2em; border-left: 2px solid #475052; padding-left: 15px; font-style: italic;  }
 
 /* selection colours */
 ::-moz-selection { background: #475052; color: #fff; text-shadow: none; }
@@ -116,8 +115,8 @@ p a:hover, span a:hover{    text-decoration: none; border-bottom: 1px dashed #99
 
 /* headings */
 
-h1, h2, h3, h4, h5{  font-weight: normal; margin: 0; color: #333; margin: 0 0 20px 0;   }
-h1 a, h2 a, h3 a, h4 a, h5 a{   text-decoration: none; }
+h1, h2, h3, h4, h5{  font-weight: normal; margin: 0; color: #333; margin: 0 0 20px 0; font-family: aller_lightregular, Arial, sans-serif;  }
+h1 a, h2 a, h3 a, h4 a, h5 a{   text-decoration: none; color: #333; }
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover{   text-decoration: none; color: #e94127;  }                 
 h1{ font-size: 2em;   }
 h2{ font-size: 2em;   }
@@ -160,17 +159,21 @@ section:first-child{ margin-left: 0;  }
 
 /* header */
 
-.wrapper#header-wrapper{   position: relative; background: url('img/backgrounds/alps.jpg') no-repeat 50% 0;  background-attachment: fixed; z-index: 1;  }
+.wrapper#header-wrapper{   position: relative; background: url('img/backgrounds/alps2.jpg') no-repeat 50% 50%;  background-attachment: fixed; z-index: 1;  }
 .wrapper#header-wrapper .container{   text-align: center; font-style: italic; font-size: 2em; color: #fff; line-height: 1.2em; font-weight: 100; text-shadow: 0 0 10px #333;  }
 .wrapper#header-wrapper .container p{    font-family: Georgia, Times, serif;    }
 .wrapper#header-wrapper .container a.btn{   margin: 10px 0; font-style: normal; text-shadow: none; font-size: .8em;  }
 
+/* homepage header bg */
+
+body#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: 100%;  }
 
 header{   padding: 30px 0;  }
+header #header-logo{   float: left;   }
 header nav{  float: right; text-align: right; padding: 38px 0; font-size: 1.3em;   }
 header nav ul li{   display: inline; margin: 0 0 0 50px;    }
 header nav ul li:first-child{    margin: 0;   }
-header nav ul li a{ color: #fff !important; text-decoration: none; text-shadow: 0 0 10px #888; font-family: allerregular; }
+header nav ul li a{ color: #fff !important; text-decoration: none; font-family: allerregular; }
 header nav li.current_page_item a, header nav li a:hover{    color: #e94127 !important; text-decoration: none;  }
 
 /* footer */
@@ -191,6 +194,8 @@ div.intro{    font-size: 2em; font-style: italic; text-align: center; padding: 0
 div.intro a{    color: #475052;    }
 div.intro p{  margin: 0;      }
 
+#recent-work img{  max-width: 100%;   }
+
 #recent-posts ul, #recent-posts ul li{    list-style: none; margin: 0; padding: 0;    }
 #recent-posts ul li{   position: relative; padding: 20px 0 20px 101px;  background: url('img/panel-heading-bg.png') no-repeat 0 50%; margin-left: -21px;  }
 #recent-posts ul li img.wp-post-image{    position: absolute; left: 31px; top: 50%; border-radius: 50%; width: 50px; height: 50px; margin-top: -25px; }
@@ -200,41 +205,45 @@ div.intro p{  margin: 0;      }
 
 #post-loop article.post{    position: relative; min-height: 160px; margin: 0 0 30px; padding: 30px 0 0 200px; border-top: 1px dashed #999;  }
 #post-loop article.post:first-child{  border-top: none;  }
-#post-loop img.attachment-post-thumbnail{    position: absolute; left: 0; top: 30px; border-radius: 50%; -moz-border-radius: 80px; -webkit-border-radius: 80px;  }
+#post-loop img.attachment-post-thumbnail{    position: absolute; left: 0; top: 30px; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;  }
 #post-loop article.post h2{    margin: 0;    }
 #post-loop article.post span.meta{    display: block; margin: 0 0 30px;    }
 
-/* Single post */
+/* Single views */
 
-#single-post-content{    text-align: center;    }
-#single-post-content{    margin: 0 auto; float: none;    }
-#single-post-content img.attachment-post-thumbnail-large{    border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; margin: -130px 0 20px; width: 220px; height: 220px;    }
-#single-post-content h1{    margin: 0;    }
-#single-post-content article.post-content{  font-size: 1.2em;   }
-#single-post-content article.post-content p,
-#single-post-content article.post-content h1,
-#single-post-content article.post-content h2,
-#single-post-content article.post-content h3,
-#single-post-content article.post-content h4,
-#single-post-content article.post-content h5,
-#single-post-content article.post-content span{ padding: 0 25%; }
-#single-post-content article.post-content p{    text-align: left; margin: 0 0 30px;  }
-#single-post-content span.meta{    display: block; margin: 0 0 30px;    }
-#single-post-content article.post-content img{    padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; margin: 0 0 30px 0; box-shadow: 0 5px 10px #ddd; -moz-box-shadow: 0 5px 10px #ddd; -webkit-box-shadow: 0 5px 10px #ddd;    }
-#single-post-content .wp-caption{    margin: 0 auto;    }
-#single-post-content .wp-caption img{    margin: 0 0 10px !important;    }
-#single-post-content p.wp-caption-text{  font-style: italic; font-size: .9em; text-align: center; margin: 0 0 30px; padding: 0 !important; text-align: center !important;  }
-
+article.post-content img.attachment-post-thumbnail-large{  padding: 0;  border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; margin: -130px 0 20px; width: 220px; height: 220px;  border: none;  }
+article.post-content h1{    margin: 0;    }
+article.post-content span.meta{    display: block; margin: 0 0 30px;    }
+article.post-content{    text-align: center; margin: 0 auto; float: none;    }
+article.post-content{  font-size: 1.2em;   }
+article.post-content p,
+article.post-content h1,
+article.post-content h2,
+article.post-content h3,
+article.post-content h4,
+article.post-content h5,
+article.post-content span{ padding: 0 25%; }
+article.post-content p{    text-align: left; margin: 0 0 30px;  }
+article.post-content img{    padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; margin: 0 0 30px 0; }
+article.post-content .wp-caption{    margin: 0 auto;    }
+article.post-content .wp-caption img{    margin: 0 0 10px !important;    }
+article.post-content p.wp-caption-text{  font-style: italic; font-size: .9em; text-align: center; margin: 0 0 30px; padding: 0 !important; text-align: center !important;  }
+article.post-content a.button{    margin-bottom: 10px;    }
+article.post-content p.postscript{    padding-top: 20px; border-top: 1px dashed #999; font-style: italic;   }
 /* Work page */
 
+body.single-work #header-wrapper{    background: none;   }
+
 div.work{    float: left; width: 33.333%; height: 320px; text-align: center; position: relative; overflow: hidden; }
-div.work a img.work-thumbnail{  width: 340px; height: 340px; margin: -10px 0 0 -10px;     }
+div.work a img.work-thumbnail{  width: 120%; height: 120%; margin: -10% 0 0 -10%; max-width: initial;    }
 div.work a:hover img.work-thumbnail{ -webkit-filter: blur(5px); filter: url('img/filter.svg#blur'); }
 div.work a div.overlay{    position: absolute; width: 100%; height: 100%; color: #fff; z-index: 255; display: none; background: url('img/overlay_bg.png');   }
 div.work a div.overlay .overlay-content{    display: table; width: 100%; height: 100%;    }
 div.work a div.overlay .overlay-content h2{    padding: 0 10%; color: #fff; display: table-cell; vertical-align: middle; height: 100%; text-shadow: 0 0 5px #333; }
 
 /* Work single */
+
+.slides{   text-align: center;  }
 
 /* Enquire Page */
 
@@ -258,9 +267,11 @@ ul.link-icons li.linkedin a:hover{    background-color: #0073B2;  }
 
 /* buttons */
 
-a.btn, input[type=submit] {      font-family: aller_lightregular, Arial, sans-serif; display: inline-block; padding: 9px 40px; border-radius:100px; -webkit-border-radius:100px;        -moz-border-radius:100px; line-height: 1em !important; color: #fff; background: #333; font-size: inherit; font-weight: 100; border: none; text-decoration: none;          -webkit-transition: background 0.25s ease-out;  -moz-transition: background 0.25s ease-out; -ms-transition: background 0.25s ease-out; -o-transition: background 0.25s ease-out;                  transition: background 0.25s ease-out; text-transform: lowercase;   }
-.btn { *display: inline; }
-.btn:hover, input[type=submit]:hover { background: #e94127; color: #fff; }
+a.button, input[type=submit] {  font-size: 16px; background: #333;   font-family: allerregular, Arial, sans-serif; display: inline-block; padding: 15px 20px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; line-height: 1em !important; color: #fff; border: none; text-decoration: none; -webkit-transition: background 0.25s ease-out; -moz-transition: background 0.25s ease-out; -ms-transition: background 0.25s ease-out; -o-transition: background 0.25s ease-out; transition: background 0.25s ease-out; text-transform: lowercase;  }
+a.button { *display: inline; }
+a.button:hover, input[type=submit]:hover { background-color: #e94127 !important; color: #fff; border: none !important; }
+a.button.back{     background: #333 url('img/button-arrow-left.png') no-repeat 0 50%; padding: 15px 20px 15px 37px;  }
+a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 100% 50%; padding: 15px 37px 15px 20px;  }
 
 /* typo */
 
@@ -276,33 +287,87 @@ a.btn, input[type=submit] {      font-family: aller_lightregular, Arial, sans-se
 /* 748px  */
 @media all and (min-width: 749px) and (max-width: 940px) { 
 
-  header, section.s1, .container, footer{  width: 748px; clear: both; margin: 0 auto;  }
-  section.s2, section.s3, section.s4{  width: 364px; }
-  
-  img{   max-width: 100%; }
+    header, section.s1, .container, footer{  width: 748px; clear: both; margin: 0 auto;  }
+    section.s2, section.s3, section.s4{  width: 364px; }
+
+    img{   max-width: 100%; }
+
+    div.intro{    padding: 0 130px;    }
+
+    article.post-content p,
+    article.post-content h1,
+    article.post-content h2,
+    article.post-content h3,
+    article.post-content h4,
+    article.post-content h5,
+    article.post-content span{ padding: 0 20%; }
+
+    div.work{    height: 249px;    }
   
 }
 
 /* Mobile Landscape */
 @media all and (min-width: 480px) and (max-width: 748px) { 
     
-  header, section.s1, .container, footer, section.s2, section.s3, section.s4, article{  width: 450px;} 
-  section{   margin: 0 !important; }
-  article, section{  margin-bottom: 20px !important; }
-    
-  img{   max-width: 100%; }
+    header, section.s1, .container, footer, section.s2, section.s3, section.s4, article{  width: 450px;} 
+    section{   margin: 0 !important; }
+    article, section{  margin-bottom: 20px !important; }
 
+    img{   max-width: 100%; }
+
+    div.intro{    padding: 0; font-size: 1.8em; width: 400px; margin: 0 auto 40px;    }
+
+    #post-loop article.post{    padding: 30px 0 0; text-align: center;   }
+    #post-loop article.post p{    text-align: left;    }
+    #post-loop img.attachment-post-thumbnail{    position: initial;    }
+
+    article.post-content p,
+    article.post-content h1,
+    article.post-content h2,
+    article.post-content h3,
+    article.post-content h4,
+    article.post-content h5,
+    article.post-content span{ padding: 0 10%; }
+    article.post-content img.attachment-post-thumbnail-large{    margin-top: -50px;   }
+
+    div.work{    height: 150px;    }
+    div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
 }
 
 /* Mobile Portrait */
 @media all and (min-width: 0px) and (max-width: 479px) { 
 
-  header, section.s1, .container, footer, section.s2, section.s3, section.s4, article{  width: 300px;} 
-  section{   margin: 0 !important; }
-  article, section{  margin-bottom: 20px !important; }
-  
-  img{   max-width: 100%; }
-  
+    header, section.s1, .container, footer, section.s2, section.s3, section.s4, article{  width: 300px;} 
+    header{     text-align: center;     }
+    header #header-logo{       float: none;     }
+    header nav{   float: none; text-align: center; padding: 38px 0 0;  }
+    section{   margin: 0 !important; }
+    article, section{  margin-bottom: 20px !important; }
+    h1{ font-size: 1.6em;   }
+    h2{ font-size: 1.6em;   }
+    h3{ font-size: 1.4em; }
+    h4{ font-size: 1.2em; }
+
+    img{   max-width: 100%; }
+
+    div.intro{    padding: 0; font-size: 1.6em; width: 300px; margin: 0 auto 40px;    }
+
+    #post-loop article.post{    padding: 30px 0 0; text-align: center;   }
+    #post-loop article.post p{    text-align: left;    }
+    #post-loop img.attachment-post-thumbnail{    position: initial; margin-bottom: 20px;   }
+
+    article.post-content p,
+    article.post-content h1,
+    article.post-content h2,
+    article.post-content h3,
+    article.post-content h4,
+    article.post-content h5,
+    article.post-content span{ padding: 0; }
+    article.post-content img.attachment-post-thumbnail-large{    margin-top: 0; width: 160px; height: 160px;  }
+
+    div.work{    height: 100px;    }
+    div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
+
 }
 
 /* =============================================================================
