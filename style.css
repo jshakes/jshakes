@@ -195,6 +195,7 @@ div.intro a{    color: #475052;    }
 div.intro p{  margin: 0;      }
 
 #recent-work img{  max-width: 100%;   }
+#recent-work a.button{    margin-top: 10px;   }
 
 #recent-posts ul, #recent-posts ul li{    list-style: none; margin: 0; padding: 0;    }
 #recent-posts ul li{   position: relative; padding: 20px 0 20px 101px;  background: url('img/panel-heading-bg.png') no-repeat 0 50%; margin-left: -21px;  }
@@ -292,6 +293,9 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
 
     img{   max-width: 100%; }
 
+    /* dont scale the header image */
+    body#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: auto;  }
+
     div.intro{    padding: 0 130px;    }
 
     article.post-content p,
@@ -314,6 +318,9 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     article, section{  margin-bottom: 20px !important; }
 
     img{   max-width: 100%; }
+
+    /* dont scale the header image */
+    body#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: auto;  }
 
     div.intro{    padding: 0; font-size: 1.8em; width: 400px; margin: 0 auto 40px;    }
 
@@ -349,6 +356,9 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     h4{ font-size: 1.2em; }
 
     img{   max-width: 100%; }
+
+    /* dont scale the header image */
+    body#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: auto;  }
 
     div.intro{    padding: 0; font-size: 1.6em; width: 300px; margin: 0 auto 40px;    }
 
