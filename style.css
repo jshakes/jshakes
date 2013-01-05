@@ -380,6 +380,15 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
 
 }
 
+/* Retina display specific */
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) { 
+
+    ul.link-icons li a{    background-image: url('img/icon_sprite@2x.png'); }
+    a.button.back{     background-image: url('img/button-arrow-left@2x.png');  }
+    a.button.forward{  background-image: url('img/button-arrow-right@2x.png'); }
+}
+
 /* =============================================================================
    Non-semantic helper classes
    Please define your styles before this section.
