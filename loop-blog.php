@@ -16,8 +16,15 @@
     </article>
     <?php endwhile; ?>
 
+    <div class="post-navigation">
+        <?php next_posts_link("Older posts"); ?>
+        <?php previous_posts_link("Newer posts"); ?>
+        <ul class="link-icons">
+            <li class="rss">
+                <a href="/feed/">RSS</a>
+            </li>
+        </ul>
+    </div>
     <?php
-    next_posts_link("Older posts");
-    previous_posts_link("Newer posts");
-endif;
+    endif;
 ?>

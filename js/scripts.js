@@ -23,7 +23,9 @@ $(function(){
 royalSliderInit = function(){
 
     var args = {
-        keyboardNavEnabled: true
+        keyboardNavEnabled: true,
+        autoScaleSlider: false,
+        autoScaleSliderWidth: 960
     }
 
     $(".slides").royalSlider(args);

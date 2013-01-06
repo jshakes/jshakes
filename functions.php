@@ -6,7 +6,7 @@ add_theme_support('post-thumbnails');
 set_post_thumbnail_size( 160, 160, true );
 add_image_size("post-thumbnail-large", 220, 220, true);
 add_image_size("work-thumbnail", 340, 340, true);
-add_image_size("work-full", 340, 340, true);
+add_image_size("work-full", 700, 400, false);
 add_image_size("tiny", 50, 50, true);
 
 
