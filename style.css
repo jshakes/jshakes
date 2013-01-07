@@ -157,7 +157,7 @@ section:first-child{ margin-left: 0;  }
 
 /* header */
 
-.wrapper#header-wrapper{   position: relative; background: #666 url('img/backgrounds/alps2.jpg') no-repeat 50% 50%;  background-attachment: fixed; z-index: 1;  }
+.wrapper#header-wrapper{   position: relative; background: #666 url('img/backgrounds/alps2.jpg') no-repeat 50% 0;  background-attachment: fixed; z-index: 1;  }
 .wrapper#header-wrapper .container{   text-align: center; font-style: italic; font-size: 2em; color: #fff; line-height: 1.2em; font-weight: 100; text-shadow: 0 0 10px #333;  }
 .wrapper#header-wrapper .container p{    font-family: Georgia, Times, serif;    }
 .wrapper#header-wrapper .container a.btn{   margin: 10px 0; font-style: normal; text-shadow: none; font-size: .8em;  }
@@ -250,6 +250,7 @@ div.work a div.overlay .overlay-content h2{    padding: 0 10%; color: #fff; disp
 /* Work single */
 
 .slides{   text-align: center; padding-bottom: 20px;  }
+.slides .slide{   padding: 0 30px;   }
 
 /* Enquire Page */
 
@@ -386,6 +387,8 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
 
     div.work{    height: 100px;    }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
+
+    .slides{    height: 300px !important;   }
 
 }
 

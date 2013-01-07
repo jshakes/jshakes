@@ -1,6 +1,7 @@
 <?php
 get_header(); 
 ?>
+</div>
 <div class="wrapper content" id="body-wrapper">
     
     <div class="container clearfix">
