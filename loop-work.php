@@ -1,7 +1,7 @@
 <?php
 $args = array(
     'post_type' => 'work',
-    'orderby' => 'menu_order',
+    'orderby' => 'date',
     'order' => 'DESC',
     'posts_per_page' => -1
 );

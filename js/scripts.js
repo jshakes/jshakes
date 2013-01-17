@@ -25,7 +25,8 @@ royalSliderInit = function(){
     var args = {
         keyboardNavEnabled: true,
         autoScaleSlider: false,
-        autoScaleSliderWidth: 960
+        autoScaleSliderWidth: 960,
+        controlNavigation: 'tabs'
     }
 
     $(".slides").royalSlider(args);
