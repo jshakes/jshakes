@@ -10,8 +10,15 @@ class myTwit{
 	var $targetBlank = true;
 	var $postClass = false;
 	var $excludeReplies = 1;
+	var $showErrors = false;
 	
-	function printError($message){ echo htmlspecialchars($message);	exit;}
+	function printError($message){ 
+
+		if($this->showErrors){
+			echo htmlspecialchars($message);
+			exit;
+		}
+	}
 	
 	function debugMsg($message){if ($this->debug == true) echo htmlspecialchars($message).'<br />';}
 	
