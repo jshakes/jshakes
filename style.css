@@ -370,6 +370,8 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     .slides{ width: 480px !important; background: none; height: 370px !important; padding: 0; }
     .slides .slide.imac{    height: 368px;    }
     .slides .slide.imac img{    width: 440px; top: 20px; margin-left: -220px;    }
+
+    a#launch-work{   display: none;   }
 }
 
 /* Mobile Portrait */
@@ -412,6 +414,7 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     .slides .slide.imac{    height: 300px;    }
     .slides .slide.imac img{    width: 358px; top: 17px; margin-left: -179px;    }
 
+    a#launch-work{   display: none;   }
 }
 
 /* Retina display specific */
