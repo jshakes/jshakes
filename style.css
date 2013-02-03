@@ -315,6 +315,8 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     header, section.s1, .container, footer{  width: 748px; clear: both; margin: 0 auto;  }
     section.s2, section.s3, section.s4{  width: 364px; }
 
+    .triangles{   width: 1000px;  }
+
     img{   max-width: 100%; height: auto; }
 
     /* dont scale the header image */
@@ -340,6 +342,8 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
 
 /* Mobile Landscape */
 @media all and (min-width: 480px) and (max-width: 748px) { 
+
+    .triangles{   width: 800px;  }
     
     header, section.s1, .container, footer, section.s2, section.s3, section.s4, article{  width: 450px;} 
     section{   margin: 0 !important; }
@@ -347,8 +351,10 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
 
     img{   max-width: 100%; height: auto; }
 
-    #intro article, #twitter article{    padding: 0 0 40px; width: 400px;   }
+    #intro article, #twitter article{    padding: 0 0 40px;   }
     #intro article {    font-size: 1.8em;   }
+
+    #recent-posts ul.recent-post-loop li{   float: none; width: auto; margin: 0 0 30px 0; }
 
     #post-loop article.post{    padding: 30px 0 0; text-align: center;   }
     #post-loop article.post p{    text-align: left;    }
@@ -377,6 +383,8 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
 /* Mobile Portrait */
 @media all and (min-width: 0px) and (max-width: 479px) { 
 
+    .triangles{   width: 500px;  }
+
     header, section.s1, .container, footer, section.s2, section.s3, section.s4, article{  width: 300px;} 
     header{     text-align: center;     }
     header #header-logo{       float: none;     }
@@ -390,8 +398,10 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
 
     img{   max-width: 100%; height: auto; }
 
-    #intro article, #twitter article{    padding: 0 0 40px; width: 300px; }
+    #intro article, #twitter article{    padding: 0 0 40px; }
     #intro article {    font-size: 1.6em;   }
+
+    #recent-posts ul.recent-post-loop li{   float: none; width: auto; margin: 0 0 30px 0; }
 
     #post-loop article.post{    padding: 30px 0 0; text-align: center;   }
     #post-loop article.post p{    text-align: left;    }
