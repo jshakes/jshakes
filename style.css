@@ -232,9 +232,9 @@ article.post-content h4,
 article.post-content h5,
 article.post-content span{ padding: 0 25%; }
 article.post-content p{    text-align: left; margin: 0 0 30px;  }
-article.post-content img{    padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; margin: 0 0 30px -5px; }
-article.post-content .wp-caption{    margin: 0 auto;    }
-article.post-content .wp-caption img{    margin: 0 0 10px !important;    }
+article.post-content img{    padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; margin: 0 0 30px -6px; }
+article.post-content .wp-caption{    margin: 0 auto; max-width: 100%;   }
+article.post-content .wp-caption img{    margin-bottom: 10px;    }
 article.post-content p.wp-caption-text{  font-style: italic; font-size: .9em; text-align: center; margin: 0 0 30px; padding: 0 !important; text-align: center !important;  }
 article.post-content a.button{    margin-bottom: 10px;    }
 article.post-content p.postscript{    padding-top: 20px; border-top: 1px dashed #999; font-style: italic;   }
@@ -258,8 +258,9 @@ div.work a div.overlay .overlay-content article h4{   margin: 0;  }
 /* Work single */
 
 .slides{   text-align: center; background: url("img/arrow-keys.png") no-repeat 100% 100%; margin-bottom: 30px !important;  }
+html.touch .slide{   background: none;   }
 .slides .slide{   padding: 0 30px;   }
-.slides .slide.bordered img{ padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; max-height: 96%; margin-left: -5px;  }
+.slides .slide.bordered img{ padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; max-height: 96%; margin-left: -6px;  }
 .slides .slide.imac{    height: 500px; background: url("img/imac_slide_bg.png") no-repeat 50% 0; background-size: auto 100%; }
 .slides .slide.imac img{    width: 600px; position: absolute; top: 27px; left: 50%; margin-left: -300px;     }
 
