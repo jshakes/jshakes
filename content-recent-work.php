@@ -1,41 +1,37 @@
-<h3>Recent Work</h3>
+<h3>Selected Work</h3>
 
 <?php
 $args = array(
     "post_type" => "work",
-    "posts_per_page" => 1,
-    "orderby" => "date",
+    "posts_per_page" => 3,
+    "orderby" => "menu_order",
     "order" => "DESC"
 );
 
-$recent_work = new WP_Query($args);
+$work = new WP_Query($args);
 
-if($recent_work->have_posts()):
-
-    while($recent_work->have_posts()): $recent_work->the_post();
+$i = 1;
+while($work->have_posts()): $work->the_post();
     
-        $args = array(
-            'post_parent' => $post->ID,
-            'post_type' => 'attachment',
-            'post_mime_type' => 'image',  
-            'exclude' => get_post_thumbnail_id(),
-            'numberposts' => 1
-        );
-
-        $images = get_children($args);
-        $image = array_pop($images);
-        $imgdata = wp_get_attachment_image_src($image->ID, "small");
-
-        ?>
-        <a href="<?php the_permalink(); ?>">
-            <img src="<?php echo $imgdata[0]; ?>" alt="<?php echo $image->post_title; ?>" />
-            <h4><?php the_title(); ?></h4>
-        </a>
-        <p><?php the_excerpt(); ?>
-        <a class="button forward" href="<?php the_permalink(); ?>">View work</a>
-
-        <?php
-    endwhile;
-    wp_reset_postdata();
-endif;
+    $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "work-thumbnail" );
+    $date = get_post_meta($post->ID, "date", true);
 ?>
+    <div class="work"<?php if($i % 3 == 0): ?> style="margin-right:0"<?php endif; ?>>
+        <a href="<?php the_permalink(); ?>">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <article>
+                        <h2><?php the_title(); ?></h2>
+                        <?php if(!empty($date)): ?><h4><?php echo $date; ?></h4><?php endif; ?>
+                    </article>
+                </div>
+            </div>
+            <img class="work-thumbnail" src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
+        </a>
+    </div>    
+<?php 
+$i++;
+endwhile;
+wp_reset_postdata();
+?>
+<a class="button forward" href="/work">See all work</a>

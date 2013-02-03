@@ -5,9 +5,9 @@
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size( 160, 160, true );
 add_image_size("post-thumbnail-large", 220, 220, true);
-add_image_size("work-thumbnail", 340, 340, true);
-add_image_size("work-full", 700, 400, false);
-add_image_size("tiny", 50, 50, true);
+add_image_size("work-thumbnail", 352, 352, true);
+add_image_size("work-full", 888, 500, false);
+add_image_size("tiny", 48, 48, true);
 
 
 function register_post_types(){
@@ -20,8 +20,8 @@ function register_post_types(){
     	),
     	'public' => true,
     	'has_archive' => true,
-    	'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
-    	'rewrite' => false
+    	'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes'),
+    	'rewrite' => array('slug' => 'work')
   	)
   );
   
@@ -42,21 +42,6 @@ function register_post_types(){
 
 add_action( 'init', 'register_post_types', 0 );
 
-
-/* ---- Sidebar ---- */
-
-/*
-if ( function_exists('register_sidebar') ){
-	register_sidebar(array(
-	'name' => 'sidebar1',
-	'before_widget' => '<div class="widget">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3>',
-	'after_title' => '</h3>',
-	));
-}
-*/
-
 /* ---- Other ---- */
 
 //add excerpt field into pages
@@ -71,7 +56,7 @@ function register_custom_menu() {
 //replacement text for 'read more' after excerpts
 function new_excerpt_more($more) {
     global $post;
-    return ' <a class="moretag" href="'. get_permalink($post->ID) . '">Read more</a>';
+    return '...';
 }
 
 //add button class to next/prev post links
@@ -90,6 +75,13 @@ function prev_class() {
 
 function enqueue_scripts(){
     
+    wp_enqueue_script(
+        "shiv",
+        get_template_directory_uri()."/js/libs/html5shiv.js",
+        null,
+        null,
+        false
+    );
     wp_enqueue_script(
         "plugins",
         get_template_directory_uri()."/js/plugins.js",
@@ -169,5 +161,15 @@ add_action('init', 'register_custom_menu');
 /* Filters */
 
 add_filter('excerpt_more', 'new_excerpt_more');
+
+function fromRGB($r, $g, $b){
+
+        $hex = "#";
+        $hex .= base_convert($r, 10, 16);
+        $hex .= base_convert($g, 10, 16);
+        $hex .= base_convert($b, 10, 16);
+        return $hex;
+    }
+
 
 ?>

@@ -11,7 +11,9 @@ if ( have_posts() ) : the_post();
             'post_parent' => $post->ID,
             'post_type' => 'attachment',
             'post_mime_type' => 'image',  
-            'exclude' => get_post_thumbnail_id()
+            'exclude' => get_post_thumbnail_id(),
+            'orderby' => 'menu_order',
+            'order' => 'ASC'
         );
         
         $slides = get_children($args);
@@ -19,15 +21,17 @@ if ( have_posts() ) : the_post();
         if(!empty($slides))
         foreach($slides as $slide):
             
+            //if it has 'imac' in the filename, use this as a class. Otherwise use 'bordered'
+            $class = (strpos($slide->post_name, "_imac") !== false) ? "imac" : "bordered";
             $imgdata = wp_get_attachment_image_src($slide->ID, "work-full");
         ?>
-            <div class="slide">
+            <div class="slide <?php echo $class; ?>">
                 <img src="<?php echo $imgdata[0]; ?>" alt="<?php echo $slide->post_title; ?>" />
             </div>
         <?php endforeach; ?>
     </div>
 </div><!-- /#header-wrapper -->
-<div class="wrapper content" id="body-wrapper">
+<div class="wrapper content-wrapper">
     
     <div id="single-work-content" class="container clearfix">
                             

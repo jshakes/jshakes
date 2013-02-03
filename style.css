@@ -6,6 +6,8 @@ Version: 2.0
 Description: 2012 iteration of Jshakespeare.com
 
 Signal Red: #e94127
+Grey Green: #475052
+Bianchi Green: #a6ddd0;
 
 */ 
 
@@ -96,7 +98,7 @@ body{
     font-family: Georgia, Times, serif;
     font-size: 14px;
     color: #333;
-    background: #475052;
+    background: #a6ddd0;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -113,7 +115,7 @@ p a:hover, span a:hover{    text-decoration: none; background: url('img/link-bg-
 
 /* headings */
 
-h1, h2, h3, h4, h5{  font-weight: normal; margin: 0; color: #333; margin: 0 0 20px 0; font-family: aller_lightregular, Arial, sans-serif;  }
+h1, h2, h3, h4, h5{  font-weight: normal; margin: 0; color: #333; margin: 0 0 30px 0; font-family: aller_lightregular, Arial, sans-serif;  }
 h1 a, h2 a, h3 a, h4 a, h5 a{   text-decoration: none; color: #333; }
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover{   text-decoration: none; color: #e94127;  }                 
 h1{ font-size: 2.4em;   }
@@ -153,24 +155,17 @@ section.s4{  width: 220px;}
 section{   float: left; margin: 0 0 0 20px; }
 section:first-child{ margin-left: 0;  }
 
-#body-wrapper{  background: #f8f8f8 url('img/body-bg.png'); padding: 0 0 10px 0; border-bottom: 1px solid #ccc; padding: 20px 0;  }
+.content-wrapper{  background: #fff; padding: 30px 0;  }
 
-/* header */
+/* triangles */
 
-.wrapper#header-wrapper{  overflow: hidden; position: relative; background: #666 url('img/backgrounds/triangles4.png') no-repeat 50% -40px;  background-attachment: fixed; z-index: 1;  }
-.wrapper#header-wrapper .container{   text-align: center; font-style: italic; font-size: 2em; color: #fff; line-height: 1.2em; font-weight: 100; text-shadow: 0 0 10px #333; z-index: 2; }
-.wrapper#header-wrapper .container p{    font-family: Georgia, Times, serif;    }
-.wrapper#header-wrapper .container a.btn{   margin: 10px 0; font-style: normal; text-shadow: none; font-size: .8em;  }
-
-.triangles{    position: fixed; width: 2000px; height: 500px; z-index: -1; overflow: hidden; }
-.triangles .square{   width: 100px; float: left; background: blue;   }
+.triangles{    position: fixed; width: 2000px; z-index: -1; overflow: hidden; display: none; }
+.triangles .square{   width: 100px; float: left; background: blue; -webkit-transition: background-color 1s ease-out; transition: background-color 1s ease-out; -moz-transition: background-color 1s ease-out;   }
 .triangles .square .triangle:nth-child(1){   border-top: 50px solid transparent;  border-bottom: 50px solid transparent; border-left: 50px solid green; float: left;  }
 .triangles .square .triangle:nth-child(2){   border-top: 50px solid transparent;  border-bottom: 50px solid transparent; border-right: 50px solid green; float: right;  }
 .triangles .square .triangle:nth-child(3){   border-top: 50px solid transparent;  border-bottom: 50px solid red; border-right: 50px solid transparent; border-left: 50px solid transparent;   }
 
-/* homepage header bg */
-
-#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: 100%;  }
+/* header */
 
 header{   padding: 30px 0;  }
 header #header-logo{   float: left;   }
@@ -180,42 +175,47 @@ header nav ul li:first-child{    margin: 0;   }
 header nav ul li a{ color: #fff !important; text-decoration: none; font-family: allerregular; }
 header nav li.current_page_item a, header nav li a:hover{    color: #e94127 !important; text-decoration: none;  }
 
-/* footer */
-
-#footer-wrapper{     background: #475052;   }
+ /*social buttons */
 
 ul.social-buttons{  float: left; list-style: none; margin: 20px 0; padding: 0;  }
 ul.social-buttons li{  float: left; margin: 0 0 0 20px; padding: 0; }
 ul.social-buttons li:first-child{  margin-left: 0; }
 
-footer { padding: 30px 0; color: #7F8B8D; text-shadow: 0 -1px #444; }
+/* footer */
+
+footer {  color: #475052; padding: 30px 0; text-align: center; }
 footer p{  margin: 0;  }
-footer a{  text-decoration: none; font-style: italic; background: none; color: #fff;  }
-footer p.quote-body, footer span.quote-source{    text-align: right;  }
-footer p.quote-body{  font-style: italic;  }
-footer span.quote-source{    display: block;    }
+footer a{  text-decoration: none; background: none;  }
 /* Homepage */
 
-div.intro{    font-size: 2em; font-family: 'allerregular'; text-align: center; padding: 0 160px;  margin: 0 0 40px; color: #475052;  }
-div.intro a{    color: #475052;    }
-div.intro p{  margin: 0;      }
+#intro article, #twitter article{  font-family: 'allerregular'; text-align: center; padding: 0 125px 40px; color: #475052;  text-rendering: optimizeLegibility;  }
+#intro article a, #twitter article a{   color: #475052;  }
 
-#recent-work img{  max-width: 100%; margin: 0 0 20px;  }
-#recent-work a.button{    margin-top: 10px;   }
+#intro article{    font-size: 2em;  }
+#intro article p{    margin: 0;      }
 
-#recent-posts ul, #recent-posts ul li{    list-style: none; margin: 0; padding: 0;    }
-#recent-posts ul li{   position: relative; padding: 20px 0 20px 70px;/*  background: url('img/panel-heading-bg.png') no-repeat 0 50%; margin-left: -21px;*/  }
-#recent-posts ul li img.wp-post-image{    position: absolute; left: 0; top: 50%; border-radius: 50%; width: 50px; height: 50px; margin-top: -25px; }
-#recent-posts ul li h4{   margin: 0;    }
+#twitter ul, #twitter li{    list-style: none; margin: 0; padding: 0;    }
+#twitter ul.twitbox{     padding: 40px 0;   }
+#twitter span.tcontent{   font-size: 1.6em; margin: 0 0 10px; display: block;  }
+#twitter span.twhen{    display: block;    }
+
+#recent-work, #recent-posts{    text-align: center;    }
+
+#recent-work h3, #recent-posts h3{    text-align: left;   }
+#recent-work .work{   margin-bottom: 30px;  }
+
+#recent-posts ul.recent-post-loop, #recent-posts ul.recent-post-loop li{    list-style: none; margin: 0; padding: 0; text-align: left;   }
+#recent-posts ul.recent-post-loop li{   position: relative; padding: 0 0 0 70px; float: left; width: 230px; margin: 0 30px 30px 0; }
+#recent-posts ul.recent-post-loop li img.wp-post-image{    position: absolute; left: 0; top: 0; border-radius: 50%; width: 48px; height: 48px; }
+#recent-posts ul.recent-post-loop li h4{   margin: 0;    }
 
 /* Posts page */
 
-#post-loop article.post{    position: relative; min-height: 160px; margin: 0 0 30px; padding: 30px 0 0 200px; border-top: 1px dashed #999;  }
-#post-loop article.post:first-child{  border-top: none;  }
-#post-loop img.attachment-post-thumbnail{    position: absolute; left: 0; top: 30px; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;  }
-#post-loop article.post h2{    margin: 0;    }
-#post-loop article.post span.meta{    display: block; margin: 0 0 30px;    }
-#post-loop .post-navigation{     text-align: center; padding: 20px 0 0; border-top: 1px solid #999;   }
+#post-loop article.post-content{   margin: 0 0 80px;  }
+#post-loop article.post-content:first-child{  border-top: none;  }
+#post-loop article.post-content h2{    margin: 0;    }
+#post-loop .post-navigation{     text-align: center; padding: 20px 0 0;  }
+#post-loop article.post-content img.attachment-post-thumbnail{  padding: 0;  border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; margin: 0 0 10px; border: none;  }
 
 /* Single views */
 
@@ -246,19 +246,22 @@ body.single-work article.post-content h1{    margin: 0;    }
 
 /* Work page */
 
-/*body.single-work #header-wrapper{    background: none;   }*/
-
-div.work{    float: left; width: 33.333%; height: 320px; text-align: center; position: relative; overflow: hidden; }
-div.work a img.work-thumbnail{  width: 120%; height: 120%; margin: -10% 0 0 -10%; max-width: initial;    }
+div.work{    float: left; width: 310px; margin: 0 15px 15px 0; height: 310px; text-align: center; position: relative; overflow: hidden; }
+div.work a img.work-thumbnail{  width: 110%; height: 110%; margin: -5% 0 0 -5%; max-width: initial;    }
 div.work a:hover img.work-thumbnail{ -webkit-filter: blur(5px); filter: url('img/filter.svg#blur'); }
 div.work a div.overlay{    position: absolute; width: 100%; height: 100%; color: #fff; z-index: 255; display: none; background: url('img/overlay_bg.png');   }
 div.work a div.overlay .overlay-content{    display: table; width: 100%; height: 100%;    }
-div.work a div.overlay .overlay-content h2{    padding: 0 10%; color: #fff; display: table-cell; vertical-align: middle; height: 100%; text-shadow: 0 0 5px #333; }
+div.work a div.overlay .overlay-content article{    padding: 0 10%; display: table-cell; vertical-align: middle; height: 100%; }
+div.work a div.overlay .overlay-content article h2, div.work a div.overlay .overlay-content article h4{   color: #fff;  }
+div.work a div.overlay .overlay-content article h4{   margin: 0;  }
 
 /* Work single */
 
-.slides{   text-align: center; padding-bottom: 20px;  }
+.slides{   text-align: center; background: url("img/arrow-keys.png") no-repeat 100% 100%; margin-bottom: 30px !important;  }
 .slides .slide{   padding: 0 30px;   }
+.slides .slide.bordered img{ padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; }
+.slides .slide.imac{    height: 500px; background: url("img/imac_slide_bg.png") no-repeat 50% 0; background-size: auto 100%; }
+.slides .slide.imac img{    width: 600px; position: absolute; top: 27px; left: 50%; margin-left: -300px;     }
 
 /* Enquire Page */
 
@@ -280,9 +283,12 @@ ul.link-icons li.twitter a:hover{    background-color: #00aced;  }
 
 .panel{  background: #fff; border: 1px solid #ccc; padding: 20px;   }
 
+/* helpers */
+
 .left{   float: left; }
 .right{   float: right; }
 .clear{    clear: both; }
+.center{     text-align: center;   }
 
 /* buttons */
 
@@ -309,12 +315,15 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     header, section.s1, .container, footer{  width: 748px; clear: both; margin: 0 auto;  }
     section.s2, section.s3, section.s4{  width: 364px; }
 
-    img{   max-width: 100%; }
+    img{   max-width: 100%; height: auto; }
 
     /* dont scale the header image */
     body#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: auto;  }
 
-    div.intro{    padding: 0 130px;    }
+    #intro article, #twitter article{    padding: 0 90px 40px;    }
+
+    ul#recent-posts{     width: 70%; margin: 0 auto;   }
+    ul#recent-posts li{   float: none; width: auto;   }
 
     article.post-content p,
     article.post-content h1,
@@ -322,10 +331,11 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     article.post-content h3,
     article.post-content h4,
     article.post-content h5,
+    article.post-content blockquote,
     article.post-content span{ padding: 0 20%; }
 
-    div.work{    height: 249px;    }
-  
+    div.work{    width: 240px; margin: 0 14px 14px 0; height: 240px;    }
+    div.slides{   width: 748px;  }
 }
 
 /* Mobile Landscape */
@@ -335,12 +345,10 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     section{   margin: 0 !important; }
     article, section{  margin-bottom: 20px !important; }
 
-    img{   max-width: 100%; }
+    img{   max-width: 100%; height: auto; }
 
-    /* dont scale the header image */
-    body#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: auto 100%;  }
-
-    div.intro{    padding: 0; font-size: 1.8em; width: 400px; margin: 0 auto 40px;    }
+    #intro article, #twitter article{    padding: 0 0 40px; width: 400px;   }
+    #intro article {    font-size: 1.8em;   }
 
     #post-loop article.post{    padding: 30px 0 0; text-align: center;   }
     #post-loop article.post p{    text-align: left;    }
@@ -352,11 +360,16 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     article.post-content h3,
     article.post-content h4,
     article.post-content h5,
+    article.post-content blockquote,
     article.post-content span{ padding: 0 10%; }
     article.post-content img.attachment-post-thumbnail-large{    margin-top: -50px;   }
 
-    div.work{    height: 150px;    }
+    div.work{    width: 140px; height: 140px; margin: 0 15px 15px 0;    }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
+
+    .slides{ width: 480px !important; background: none; height: 370px !important; padding: 0; }
+    .slides .slide.imac{    height: 368px;    }
+    .slides .slide.imac img{    width: 440px; top: 20px; margin-left: -220px;    }
 }
 
 /* Mobile Portrait */
@@ -367,36 +380,37 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     header #header-logo{       float: none;     }
     header nav{   float: none; text-align: center; padding: 38px 0 0;  }
     section{   margin: 0 !important; }
-    article, section{  margin-bottom: 20px !important; }
+    section{  margin-bottom: 20px !important; }
     h1{ font-size: 1.6em;   }
     h2{ font-size: 1.6em;   }
     h3{ font-size: 1.4em; }
     h4{ font-size: 1.2em; }
 
-    img{   max-width: 100%; }
+    img{   max-width: 100%; height: auto; }
 
-    /* dont scale the header image */
-    body#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: auto 100%;  }
-
-    div.intro{    padding: 0; font-size: 1.6em; width: 300px; margin: 0 auto 40px;    }
+    #intro article, #twitter article{    padding: 0 0 40px; width: 300px; }
+    #intro article {    font-size: 1.6em;   }
 
     #post-loop article.post{    padding: 30px 0 0; text-align: center;   }
     #post-loop article.post p{    text-align: left;    }
     #post-loop img.attachment-post-thumbnail{    position: initial; margin-bottom: 20px;   }
-
+    #post-loop div.post-navigation ul.link-icons{    padding: 30px 0 0;   }
     article.post-content p,
     article.post-content h1,
     article.post-content h2,
     article.post-content h3,
     article.post-content h4,
     article.post-content h5,
+    article.post-content blockquote,
     article.post-content span{ padding: 0; }
     article.post-content img.attachment-post-thumbnail-large{    margin-top: 0; width: 160px; height: 160px;  }
 
-    div.work{    height: 100px;    }
+    div.work{    height: 300px; width: 300px; margin: 0 0 15px 0;   }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
 
-    .slides{    height: 300px !important;   }
+    .slides{    height: 312px !important; background: none;   }
+    .slides .slide.imac{    height: 300px;    }
+    .slides .slide.imac img{    width: 358px; top: 17px; margin-left: -179px;    }
 
 }
 

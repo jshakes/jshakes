@@ -16,8 +16,8 @@ $(function(){
     
        $(this).children(".overlay").fadeOut(200);
     });
-    //backgroundScrollInit();
     royalSliderInit();
+    initTriangles();
 });
 
 royalSliderInit = function(){
@@ -32,13 +32,51 @@ royalSliderInit = function(){
     $(".slides").royalSlider(args);
 }
 
-backgroundScrollInit = function(){
-    /*
-    The background will scroll up at 25% of the amount the window is scrolled down (y / 4)
-    */
-    $(window).scroll(function() {
-        var y = $(this).scrollTop();
-        $("body#home #header-wrapper").css('background-position', '50% ' + parseInt(-y * 0.5) + 'px');
-    });
-    
+initTriangles = function(){
+
+    //create triangle div
+    $("body").prepend("<div class=\"triangles\"></div>");
+
+    var rspread = 0, gspread = 14, bspread = 2, r = 166, g = 214, b = 208, square_width = 100;
+
+    //how many squares in a row?
+    var row_length = Math.ceil(rowlength = $(".triangles").width() / square_width);
+
+    while($(".triangles").height() < $(window).height()){
+
+        for(i = 1; i <= row_length; i++){
+            
+            var square = "<div class=\"square\" style=\"background-color: #" + genRandHex(r - rspread, r + rspread, g - gspread, g + gspread, b - bspread, b + bspread) + "\">";
+            square += "<div style=\"border-left-color: #" + genRandHex(r - rspread, r + rspread, g - gspread, g + gspread, b - bspread, b + bspread) + "\" class=\"triangle\"></div>";
+            square += "<div style=\"border-right-color: #" + genRandHex(r - rspread, r + rspread, g - gspread, g + gspread, b - bspread, b + bspread) + "\" class=\"triangle\"></div>";
+            square += "<div style=\"border-bottom-color: #" + genRandHex(r - rspread, r + rspread, g - gspread, g + gspread, b - bspread, b + bspread) + "\" class=\"triangle\"></div>";
+            square += "</div>";
+
+            $(".triangles").append(square);
+        }
+    }
+
+    $(".triangles").fadeIn(3000);
+
+    /*var animation = window.setInterval(function(){
+
+        var rand = Math.round(Math.random() * $(".square").length)
+        $(".square").eq(rand).css({backgroundColor : "#" + genRandHex(r - rspread, r + rspread, g - gspread, g + gspread, b - bspread, b + bspread)});
+    }, 100);*/
+}
+
+genRandHex = function(rmin, rmax, gmin, gmax, bmin, bmax){
+
+    var r = Math.floor(Math.random() * (rmax - rmin + 1)) + rmin;
+    var g = Math.floor(Math.random() * (gmax - gmin + 1)) + gmin;
+    var b = Math.floor(Math.random() * (bmax - bmin + 1)) + bmin;
+    return rgb2hex(r, g, b);
+}
+
+rgb2hex = function(r, g, b){
+
+    var r16 = r.toString(16);
+    var g16 = g.toString(16);
+    var b16 = b.toString(16);
+    return r16 + g16 + b16;
 }

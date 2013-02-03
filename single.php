@@ -3,7 +3,7 @@ get_header();
 if ( have_posts() ) : the_post(); 
 ?>
 </div><!-- /#header-wrapper -->
-<div class="wrapper content" id="body-wrapper">
+<div class="wrapper content-wrapper">
     
     <div id="single-post-content" class="container clearfix">
                     
@@ -15,9 +15,8 @@ if ( have_posts() ) : the_post();
             <span class="meta"><?php echo js_date(); ?></span>
             
             <?php the_content(); ?>
-
-            <?php // get_template_part("content", "postscript"); ?>
             
+            <br />
             <a class="button back" href="/blog/">Back to Blog</a>
         </article>    
     </div>

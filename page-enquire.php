@@ -5,7 +5,7 @@ get_header(); ?>
 <?php
 if ( have_posts() ) : the_post(); 
 ?>
-<div class="wrapper content" id="body-wrapper">
+<div class="wrapper content-wrapper">
     
     <div class="container clearfix">
                     
@@ -14,11 +14,11 @@ if ( have_posts() ) : the_post();
             <?php the_content(); ?>
 
             <ul class="link-icons">
-                <li class="email">
-                    <a href="mailto:j@jshakespeare.com">Email</a>
+                <li class="linkedin">
+                    <a href="http://www.linkedin.com/pub/james-shakespeare/35/844/407" target="_blank">LinkedIn</a>
                 </li>
-                <li class="twitter">
-                    <a href="https://twitter.com/jeshake" target="_blank">Twitter</a>
+                <li class="email">
+                    <a href="mailto:j@jshakespeare.com" title="Let's do this">Email</a>
                 </li>
             </ul>
 

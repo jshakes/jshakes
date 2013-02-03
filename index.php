@@ -9,19 +9,25 @@ get_header();
 <?php
 if ( have_posts() ): 
 ?>
-<div class="wrapper clearfix" id="body-wrapper">
+<div class="wrapper content-wrapper">
        
-  <div class="container clearfix">
-  
-    <section class="s1" id="post-loop">
+  <div class="container clearfix" id="post-loop">
     
-      <?php get_template_part('loop', 'blog'); ?>
-      
-    </section>
+    <?php get_template_part('loop', 'blog'); ?>
     
+    <div class="post-navigation">
+        <?php next_posts_link("Older posts"); ?>
+        <?php previous_posts_link("Newer posts"); ?>
+        <ul class="link-icons">
+            <li class="rss">
+                <a href="/feed/">RSS</a>
+            </li>
+        </ul>
+    </div>
   </div>
   
 </div>
+
 	
 <?php
 endif;
