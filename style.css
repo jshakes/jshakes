@@ -258,7 +258,7 @@ div.work a div.overlay .overlay-content article h4{   margin: 0;  }
 /* Work single */
 
 .slides{   text-align: center; background: url("img/arrow-keys.png") no-repeat 100% 100%; margin-bottom: 30px !important;  }
-.slides .slide{   padding: 0 50px;   }
+.slides .slide{   padding: 0 30px;   }
 .slides .slide.bordered img{ padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; max-height: 96%; margin-left: -5px;  }
 .slides .slide.imac{    height: 500px; background: url("img/imac_slide_bg.png") no-repeat 50% 0; background-size: auto 100%; }
 .slides .slide.imac img{    width: 600px; position: absolute; top: 27px; left: 50%; margin-left: -300px;     }
@@ -372,9 +372,9 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     div.work{    width: 140px; height: 140px; margin: 0 15px 15px 0;    }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
 
-    .slides{  background: none; height: 320px !important; padding: 0; }
-    .slides .slide.imac{    height: 300px;    }
-    .slides .slide.imac img{    width: 358px; top: 20px; margin-left: -179px;    }
+    .slides{  background: none; height: 270px !important; padding: 0; }
+    .slides .slide.imac{    height: 270px;    }
+    .slides .slide.imac img{    width: 324px; top: 14px; margin-left: -162px;    }
 
     a#launch-work{   display: none;   }
 }
@@ -419,7 +419,7 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     div.work{    height: 300px; width: 300px; margin: 0 0 15px 0;   }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
 
-    .slides{    height: 242px !important; background: none;   }
+    .slides{    height: 240px !important; background: none;   }
     .slides .slide.imac{    height: 240px;    }
     .slides .slide.imac img{    width: 286px; top: 13px; margin-left: -143px;    }
 
