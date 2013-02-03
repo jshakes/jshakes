@@ -1,1 +1,0 @@
-<p class="postscript">If you liked this you should consider subscribing to my RSS feed</p>
