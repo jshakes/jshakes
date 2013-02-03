@@ -76,8 +76,8 @@ function prev_class() {
 function enqueue_scripts(){
     
     wp_enqueue_script(
-        "shiv",
-        get_template_directory_uri()."/js/libs/html5shiv.js",
+        "modernizr",
+        get_template_directory_uri()."/js/libs/modernizr.min.js",
         null,
         null,
         false

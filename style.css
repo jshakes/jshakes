@@ -232,7 +232,7 @@ article.post-content h4,
 article.post-content h5,
 article.post-content span{ padding: 0 25%; }
 article.post-content p{    text-align: left; margin: 0 0 30px;  }
-article.post-content img{    padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; margin: 0 0 30px 0; }
+article.post-content img{    padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; margin: 0 0 30px -5px; }
 article.post-content .wp-caption{    margin: 0 auto;    }
 article.post-content .wp-caption img{    margin: 0 0 10px !important;    }
 article.post-content p.wp-caption-text{  font-style: italic; font-size: .9em; text-align: center; margin: 0 0 30px; padding: 0 !important; text-align: center !important;  }
@@ -248,7 +248,7 @@ body.single-work article.post-content h1{    margin: 0;    }
 
 div.work{    float: left; width: 310px; margin: 0 15px 15px 0; height: 310px; text-align: center; position: relative; overflow: hidden; }
 div.work a img.work-thumbnail{  width: 110%; height: 110%; margin: -5% 0 0 -5%; max-width: initial;    }
-div.work a:hover img.work-thumbnail{ -webkit-filter: blur(5px); filter: url('img/filter.svg#blur'); }
+html.no-touch div.work a:hover img.work-thumbnail{ -webkit-filter: blur(5px); filter: url('img/filter.svg#blur'); }
 div.work a div.overlay{    position: absolute; width: 100%; height: 100%; color: #fff; z-index: 255; display: none; background: url('img/overlay_bg.png');   }
 div.work a div.overlay .overlay-content{    display: table; width: 100%; height: 100%;    }
 div.work a div.overlay .overlay-content article{    padding: 0 10%; display: table-cell; vertical-align: middle; height: 100%; }
@@ -258,8 +258,8 @@ div.work a div.overlay .overlay-content article h4{   margin: 0;  }
 /* Work single */
 
 .slides{   text-align: center; background: url("img/arrow-keys.png") no-repeat 100% 100%; margin-bottom: 30px !important;  }
-.slides .slide{   padding: 0 30px;   }
-.slides .slide.bordered img{ padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; }
+.slides .slide{   padding: 0 50px;   }
+.slides .slide.bordered img{ padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; max-height: 96%; margin-left: -5px;  }
 .slides .slide.imac{    height: 500px; background: url("img/imac_slide_bg.png") no-repeat 50% 0; background-size: auto 100%; }
 .slides .slide.imac img{    width: 600px; position: absolute; top: 27px; left: 50%; margin-left: -300px;     }
 
@@ -337,7 +337,6 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     article.post-content span{ padding: 0 20%; }
 
     div.work{    width: 240px; margin: 0 14px 14px 0; height: 240px;    }
-    div.slides{   width: 748px;  }
 }
 
 /* Mobile Landscape */
@@ -373,9 +372,9 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     div.work{    width: 140px; height: 140px; margin: 0 15px 15px 0;    }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
 
-    .slides{ width: 480px !important; background: none; height: 370px !important; padding: 0; }
-    .slides .slide.imac{    height: 368px;    }
-    .slides .slide.imac img{    width: 440px; top: 20px; margin-left: -220px;    }
+    .slides{  background: none; height: 320px !important; padding: 0; }
+    .slides .slide.imac{    height: 300px;    }
+    .slides .slide.imac img{    width: 358px; top: 20px; margin-left: -179px;    }
 
     a#launch-work{   display: none;   }
 }
@@ -420,9 +419,9 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     div.work{    height: 300px; width: 300px; margin: 0 0 15px 0;   }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
 
-    .slides{    height: 312px !important; background: none;   }
-    .slides .slide.imac{    height: 300px;    }
-    .slides .slide.imac img{    width: 358px; top: 17px; margin-left: -179px;    }
+    .slides{    height: 242px !important; background: none;   }
+    .slides .slide.imac{    height: 240px;    }
+    .slides .slide.imac img{    width: 286px; top: 13px; margin-left: -143px;    }
 
     a#launch-work{   display: none;   }
 }

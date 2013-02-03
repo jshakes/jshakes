@@ -8,7 +8,7 @@ $(function(){
    //center the images on the single blog post
    
      
-    $("div.work a").hover(function(){
+    $("html.no-touch div.work a").hover(function(){
        
        $(this).children(".overlay").fadeIn(100);
     },
