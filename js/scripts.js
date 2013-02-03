@@ -17,7 +17,11 @@ $(function(){
        $(this).children(".overlay").fadeOut(200);
     });
     royalSliderInit();
-    initTriangles();
+    if($("html").attr("id") != "ie7" && $("html").attr("id") != "ie8"){
+        
+        //don't run on ie7 or ie8, they won't like it...
+        initTriangles();
+    }
 });
 
 royalSliderInit = function(){
