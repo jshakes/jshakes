@@ -17,8 +17,8 @@
 	
     <title><?php wp_title('|',true,'right'); bloginfo('name'); ?></title>
 		
-	<meta name="author" content="Traffic Digital Ltd.">
-    <meta name="description" content="<?php bloginfo('description'); ?>">
+	<meta name="author" content="James Shakespeare">
+    <meta name="description" content="I design and build websites, I write things in English and computer-speak and I'm an all-round good egg.">
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 	
