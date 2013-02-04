@@ -99,6 +99,7 @@ body{
     font-size: 14px;
     color: #333;
     background: #a6ddd0;
+    min-width: 300px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -106,7 +107,7 @@ p{  line-height: 1.6em; margin: 0 0 10px 0;  }
 a, a:visited{   color: #333; text-decoration: none;  }
 a:hover{    text-decoration: underline;    }
 
-p a, span a{    background: url('img/link-bg.png');  }
+p a, span a{    background: url('img/link-bg.png'); padding: 0 0 2px; }
 p a:hover, span a:hover{    text-decoration: none; background: url('img/link-bg-hover.png');  }
 
 /* selection colours */
@@ -188,15 +189,16 @@ footer p{  margin: 0;  }
 footer a{  text-decoration: none; background: none;  }
 /* Homepage */
 
-#intro article, #twitter article{  font-family: 'allerregular'; text-align: center; padding: 0 125px 40px; color: #475052;  text-rendering: optimizeLegibility;  }
+#intro article, #twitter article{  font-family: 'allerregular'; text-align: center; padding: 0 150px 40px; color: #475052;  text-rendering: optimizeLegibility;  }
 #intro article a, #twitter article a{   color: #475052;  }
 
 #intro article{    font-size: 2em;  }
 #intro article p{    margin: 0;      }
+#intro article p a{    margin: 0;      }
 
 #twitter ul, #twitter li{    list-style: none; margin: 0; padding: 0;    }
 #twitter ul.twitbox{     padding: 40px 0;   }
-#twitter span.tcontent{   font-size: 1.6em; margin: 0 0 10px; display: block;  }
+#twitter span.tcontent{   font-size: 1.6em; margin: 0 0 20px; display: block;  }
 #twitter span.twhen{    display: block;    }
 
 #recent-work, #recent-posts{    text-align: center;    }
@@ -213,14 +215,14 @@ footer a{  text-decoration: none; background: none;  }
 
 #post-loop article.post-content{   margin: 0 0 80px;  }
 #post-loop article.post-content:first-child{  border-top: none;  }
-#post-loop article.post-content h2{    margin: 0;    }
+#post-loop article.post-content h2{    margin: 0 0 20px;    }
 #post-loop .post-navigation{     text-align: center; padding: 20px 0 0;  }
-#post-loop article.post-content img.attachment-post-thumbnail{  padding: 0;  border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; margin: 0 0 10px; border: none;  }
+#post-loop article.post-content img.attachment-post-thumbnail{  padding: 0;  border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; margin: 0 0 20px; border: none;  }
 
 /* Single views */
 
 article.post-content img.attachment-post-thumbnail-large{  padding: 0;  border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; margin: -130px 0 20px; width: 220px; height: 220px;  border: none;  }
-article.post-content span.meta{    display: block; margin: 0 0 30px;    }
+article.post-content span.meta{    display: block; margin: 0 0 20px;    }
 article.post-content{    text-align: center; margin: 0 auto; float: none;    }
 article.post-content{  font-size: 1.2em;   }
 article.post-content p,
@@ -232,7 +234,7 @@ article.post-content h4,
 article.post-content h5,
 article.post-content span{ padding: 0 25%; }
 article.post-content p{    text-align: left; margin: 0 0 30px;  }
-article.post-content img{    padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; margin: 0 0 30px -6px; }
+article.post-content img{   margin: 0 0 30px 0;  }
 article.post-content .wp-caption{    margin: 0 auto; max-width: 100%;   }
 article.post-content .wp-caption img{    margin-bottom: 10px;    }
 article.post-content p.wp-caption-text{  font-style: italic; font-size: .9em; text-align: center; margin: 0 0 30px; padding: 0 !important; text-align: center !important;  }
@@ -242,7 +244,7 @@ article.post-content blockquote {  font-size: 1.2em; font-style: italic;  }
 article.post-content blockquote p{   border-left: 2px solid #475052; padding: 0 0 0 15px; }
 
 #single-post-content article.post-content h1,
-body.single-work article.post-content h1{    margin: 0;    }
+body.single-work article.post-content h1{    margin: 20px;    }
 
 /* Work page */
 
@@ -257,10 +259,10 @@ div.work a div.overlay .overlay-content article h4{   margin: 0;  }
 
 /* Work single */
 
-.slides{   text-align: center; background: url("img/arrow-keys.png") no-repeat 100% 100%; margin-bottom: 30px !important;  }
-html.touch .slide{   background: none;   }
+.slides{   text-align: center; background: url("img/arrow-keys.png") no-repeat 50% 100%; padding-bottom: 42px; margin-bottom: 30px !important;  }
+html.touch .slides{   background: url("img/arrow-swipe@2x.png") no-repeat 50% 100%; background-size: 41px auto;  }
 .slides .slide{   padding: 0 30px;   }
-.slides .slide.bordered img{ padding: 5px; background: #fff; border: 1px solid #ccc; border-radius: 3px; -moz-border-radius: 3px; max-height: 96%; margin-left: -6px;  }
+.slides .slide.bordered img{  padding: 5px; background: #fff; max-height: 96%; margin-left: -5px;  }
 .slides .slide.imac{    height: 500px; background: url("img/imac_slide_bg.png") no-repeat 50% 0; background-size: auto 100%; }
 .slides .slide.imac img{    width: 600px; position: absolute; top: 27px; left: 50%; margin-left: -300px;     }
 
@@ -323,10 +325,10 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     /* dont scale the header image */
     body#home .wrapper#header-wrapper{    background-position: 50% 0;  background-size: auto;  }
 
-    #intro article, #twitter article{    padding: 0 90px 40px;    }
+    #intro article, #twitter article{    padding: 0 70px 40px;    }
 
-    ul#recent-posts{     width: 70%; margin: 0 auto;   }
-    ul#recent-posts li{   float: none; width: auto;   }
+    #recent-posts ul.recent-post-loop{    width: 66.666%; margin: 0 auto;  }
+    #recent-posts ul.recent-post-loop li{   float: none; width: auto; margin: 0 0 30px 0; }
 
     article.post-content p,
     article.post-content h1,
@@ -373,7 +375,7 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     div.work{    width: 140px; height: 140px; margin: 0 15px 15px 0;    }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
 
-    .slides{  height: 240px !important; background: none;   }
+    .slides{  height: 240px !important;  }
     .slides .slide.imac{    height: 240px;    }
     .slides .slide.imac img{    width: 286px; top: 13px; margin-left: -143px;    }
 
@@ -420,7 +422,7 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     div.work{    height: 300px; width: 300px; margin: 0 0 15px 0;   }
     div.work a div.overlay .overlay-content h2{     font-size: 1.2em;    }
 
-    .slides{  height: 240px !important; background: none;   }
+    .slides{  height: 240px !important;  }
     .slides .slide.imac{    height: 240px;    }
     .slides .slide.imac img{    width: 286px; top: 13px; margin-left: -143px;    }
 
@@ -434,6 +436,7 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
     ul.link-icons li a{    background-image: url('img/icon_sprite@2x.png'); background-size: 240px 48px; }
     a.button.back{     background-image: url('img/button-arrow-left@2x.png'); background-size: 27px 12px; }
     a.button.forward{  background-image: url('img/button-arrow-right@2x.png'); background-size: 27px 12px; }
+    html.no-touch{   background-image: url("img/arrow-keys.png"); background-size: 41px auto;   }
 }
 
 /* =============================================================================

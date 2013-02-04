@@ -4,16 +4,16 @@ if ( have_posts() ) : the_post();
 ?>
     <div class="container" id="intro">
         <article>
-            <p>I'm James Shakespeare. I design and build <a href="/work/" title="Work">websites</a>, I write things in <a href="/blog/" title="Blog">English</a> and <a href="https://github.com/jshakes" target="_blank" title="Github">computer-speak</a> and I'm an all-round <a href="/enquire/" title="Enquire">jolly good chap</a>.</p>
+            <p>I'm James Shakespeare. I design and build <a href="/work/" title="Work">websites</a>, I write things in <a href="/blog/" title="Blog">English</a> and <a href="https://github.com/jshakes" target="_blank" title="Github">computer-speak</a> and I'm an all-round <a href="/enquire/" title="Enquire">good egg</a>.</p>
             <ul class="link-icons">
                 <li class="email">
-                    <a href="mailto:j@jshakespeare.com">Email</a>
+                    <a href="mailto:j@jshakespeare.com" title="j@jshakespeare.com">Email</a>
                 </li>
                 <li class="github">
-                    <a href="https://github.com/jshakes" target="_blank">Github</a>
+                    <a href="https://github.com/jshakes" title="Github" target="_blank">Github</a>
                 </li>
                 <li class="linkedin">
-                    <a href="http://www.linkedin.com/pub/james-shakespeare/35/844/407" target="_blank">LinkedIn</a>
+                    <a href="http://www.linkedin.com/pub/james-shakespeare/35/844/407" title="LinkedIn" target="_blank">LinkedIn</a>
                 </li>
             </ul>
         </article>

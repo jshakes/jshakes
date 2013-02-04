@@ -13,12 +13,17 @@ if ( have_posts() ) : the_post();
             
             <?php the_content(); ?>
 
+            <h4>Contact me on:</h4>
+
             <ul class="link-icons">
-                <li class="linkedin">
-                    <a href="http://www.linkedin.com/pub/james-shakespeare/35/844/407" target="_blank">LinkedIn</a>
-                </li>
                 <li class="email">
-                    <a href="mailto:j@jshakespeare.com" title="Let's do this">Email</a>
+                    <a href="mailto:j@jshakespeare.com" title="j@jshakespeare.com">Email</a>
+                </li>
+                <li class="twitter">
+                    <a href="https://twitter.com/jeshake" title="@jeshake" target="_blank">Twitter</a>
+                </li>
+                <li class="linkedin">
+                    <a href="http://www.linkedin.com/pub/james-shakespeare/35/844/407" title="LinkedIn" target="_blank">LinkedIn</a>
                 </li>
             </ul>
 

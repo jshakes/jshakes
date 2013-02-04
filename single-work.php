@@ -43,7 +43,7 @@ if ( have_posts() ) : the_post();
             <?php the_content(); ?>
             
             <?php if(!empty($work_url)): ?>
-            <a class="button forward" id="launch-work" href="<?php echo $work_url; ?>" target="_blank">Launch work</a><br>
+            <a class="button forward" id="launch-work" href="<?php echo $work_url; ?>" target="_blank">Launch site</a><br>
             <?php endif; ?>
         
             <a class="button back" href="/work/">Back to Work</a>
