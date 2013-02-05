@@ -431,7 +431,7 @@ a.button.forward{  background: #333 url('img/button-arrow-right.png') no-repeat 
 
 /* Retina display specific */
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 160dpi) { 
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 144dpi), (device-pixel-ration: 1.5), (device-pixel-ration: 2) { 
 
     ul.link-icons li a{    background-image: url('img/icon_sprite@2x.png'); background-size: 240px 48px; }
     a.button.back{     background-image: url('img/button-arrow-left@2x.png'); background-size: 27px 12px; }
