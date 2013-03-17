@@ -18,6 +18,7 @@ if ( have_posts() ) : the_post();
             
             <br />
             <a class="button back" href="/blog/">Back to Blog</a>
+            <p class="postscript">I'm looking for jobs in the US right now, <a href="/enquire/">let's talk</a>.</p>
         </article>    
     </div>
     
