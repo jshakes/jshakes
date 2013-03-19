@@ -107,8 +107,8 @@ p{  line-height: 1.6em; margin: 0 0 10px 0;  }
 a, a:visited{   color: #333; text-decoration: none;  }
 a:hover{    text-decoration: underline;    }
 
-p a, span a{    background: url('img/link-bg.png'); padding: 0 0 2px; }
-p a:hover, span a:hover{    text-decoration: none; background: url('img/link-bg-hover.png');  }
+article a{    background: url('img/link-bg.png'); padding: 0 0 2px; }
+article a:hover{    text-decoration: none; background: url('img/link-bg-hover.png');  }
 
 /* selection colours */
 ::-moz-selection { background: #475052; color: #fff; text-shadow: none; }
