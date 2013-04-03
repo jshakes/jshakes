@@ -247,7 +247,7 @@ article.post-content blockquote {  font-size: 1.2em; font-style: italic; line-he
 article.post-content blockquote p{   border-left: 2px solid #475052; padding: 0 0 0 15px; }
 
 #single-post-content article.post-content h1,
-body.single-work article.post-content h1{    margin: 20px;    }
+body.single-work article.post-content h1{    margin: 20px; padding: 0 22%;   }
 
 /* Work page */
 
